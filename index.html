@@ -1,0 +1,208 @@
+<!-- Оберунть инпуты в дивы, поправить стили (стили инпутов применить к дивам), на дивы навесить псевдоэлементы с подсказками -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Рейтинг по фамилии</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/carousel.css">
+  <link rel="stylesheet" href="styles/validator.css"> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script/bootstrap.js"></script>
+  <script src="script/circles.min.js"></script>
+  <script src="script/carousel-controls.js"></script>
+  <script src="script/myCircle.js"></script>
+  <script src="script/enterValidator.js"></script>
+
+
+  
+
+
+
+</head>
+<body>
+  <div class="active_region">
+    <div class="header">ШАПКА</div>
+
+    <div class="content">
+
+      <div class="content-head">
+        <img id="logo" >
+      </div>
+
+      <div class="content-main carousel slide">
+
+
+        <div class="carousel-inner">
+
+          <div class="item active"> <!-- step-1-start -->
+
+            <div class="title big-font black">Сколько заемщиков с Вашей фамилией имеют хорошую кредитную историю?</div>
+            <div class="middle">
+              <form class="surname_input_form" id="surname" action="" data-toggle="validator">
+                
+                <div  class="input_field_container" id="input_surname_container"><input class="input_field input-font grey" id="input_surname" type="text"  placeholder="Введите вашу фамилию" form="surname" autofocus _pattern="^[А-Яa-яA-Za-zіІїЇ\- ]+$"><span class="input_field_warning" id="surname_warning">Используйте только кириллицу<span></div>
+                
+
+               <input class="button button-font" id="submit_surname" type="submit" value="Pассчитать" form="surname" >
+                
+              </form>
+            </div>
+            <hr>
+            <div class="bottom conteiner_about_agreement">
+              
+              <div class="about_agreement base-font grey">Нажимая кнопку, Вы принимаете <a href="https://docs.google.com/document/d/1ShojRVF4Akn111VEdNx2LTxb6dhhytEee__jRngHCe4/edit">Соглашение о предоставлении информационных услуг УБКИ</a></div>
+            </div>
+
+          </div> <!-- step-1-end -->
+          
+          <div class="item"> <!-- step-2-start -->
+
+            <div class="title big-font black">Сколько заемщиков с Вашей фамилией имеют хорошую кредитную историю?</div>
+            
+            
+            <div class="middle">
+
+
+              <div class="subtitle base-font dark-grey">Ваша фамилия: <span class="surname black">Иванов</span></div>
+
+              <div class="rating-circle" id="circle-surname-rating"><span class="rating green">65%</span></div>
+
+              <div class="rating-descr small-font black"><span class="rating green">65%</span> заемщиков имеют хорошую кредитную историю</div>
+            </div>
+
+              <hr >
+              <div class="bottom">
+
+                <div class="container_place-in-rate">
+                  <div class="icon-in-line"></div>
+                  <div class="place-in-rate small-font grey">Фамилия «<span class="surname dark-grey">Иванов</span>» на <span class="place dark-grey">254</span> месте в рейтинге </div>
+                </div>
+
+                <div class=" call-to-continue dark-grey base-font" >Хотите узнать, что еще влияет на рейтинг? Укажите больше данных</div>
+                
+                <input class="button button-font" id="submit_more" type="submit" value="Продолжить" >
+             
+
+              
+              </div>
+
+            </div> <!-- step-2-end -->
+
+            <div class="item"> <!-- step-3-start -->
+
+               <div class="title big-font black">Сколько заемщиков с Вашей фамилией имеют хорошую кредитную историю?</div>
+               <div class=middle-null></div>
+
+            
+
+            <hr >
+
+            <div class="bottom ">
+              
+             <div class="subtitle base-font dark-grey">Укажите следующие данные:</span></div>
+
+
+              <form class="detail_input_form" id="detail" action="">
+                 <div  class="input_field_container" id="input_age_container"><input class="input_field input-font grey" id="input_age" type="tel"  placeholder="Ваш возраст" form="detail" autofocus _pattern="^(18)|(19)|([2-9][0-9])$"><span class="input_field_warning" id="age_warning">Допустимые значения: от 18 до 99<span></div>
+                <div class="gender_check input-font grey">
+                <div>
+                <input class="input_check input-font grey " id="male" name="gender"  type="radio"  form="detail" value="male">
+                <label for="male">Мужчина</label>
+                </div>
+                <div>
+                <input class="input_check input-font grey " id="femail" name="gender"  type="radio"  form="detail" value="female">
+                <label for="femail">Женщина</label>
+                </div>
+                </div>
+                <div  class="input_field_container" id="input_marital_status_container">
+<select class="input_field input-font grey" id="input_marital_status"  name="marital_status" form="detail" required>
+    <option disabled selected>Ваше семейное положение</option>
+    <option value="Married">Женат / Замужем</option>
+    <option value="Unmaried">Не женат / Не замужем</option>
+    <option value="Divorced">Разведен / Разведена</option>
+    <option value="Widowed">Вдовец / Вдова</option>
+    <option value="Civil_Marriage">В гражданском браке</option>
+   </select>
+   </div>
+                <div  class="input_field_container" id="input_child_count_container">
+<select class="input_field input-font grey" id="input_child_count"  name="child_count" form="detail" required>
+    <option disabled selected>Количество детей</option>
+    <option value="0">Нет детей</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4+">4+</option>
+   </select>
+                </div>
+                
+
+                <input class="button button-font" id="submit_detail" type="submit" value="Pассчитать" form="detail">
+              </form>
+              </div>
+
+            </div> <!-- step-3-end -->
+
+            <div class="item"> <!-- step-4-start -->
+
+            <div class="title big-font black">Сколько заемщиков с Вашей фамилией имеют хорошую кредитную историю?</div>
+            
+            
+            <div class="middle">
+
+
+              <div class="subtitle base-font dark-grey">Рейтинг фамилии: <span class="surname black">Иванов</span></div>
+
+              <div class="rating-circle" id="circle-detail-rating"><span id="inner_circle"></span><span id="circle-detail-rating-text" class="rating green">Ваш рейтинг:</span><span id="circle-detail-rating-value" class="rating green">72</span></div>
+
+              
+            </div>
+
+              <hr >
+              <div class="bottom">
+              
+              <ul class="facts_about_surname">
+              <li><div class="base-font dark-grey">Среди заемщиков с Вашей фамилией:</div></li>
+              <li><span class="rating-circle circle_in_list" id="circle-delay"></span><span class="list_items black base-font">имеют просрочку</span></li>
+              <li><span class="rating-circle circle_in_list" id="circle-auto-ipoteka"></span><span class="list_items black base-font">имеют автомобиль или жилье в кредит</span></li>
+              <li><span class="rating-circle circle_in_list" id="circle-open-credit"></span><span class="list_items black base-font">имеют хотя бы 1 открытый кредит</span></li>
+
+              </ul>
+
+              <div class="container_place-in-rate">
+                  <div class="icon-in-line"></div>
+                  <div class="place-in-rate small-font grey">Фамилия «<span class="surname dark-grey">Иванов</span>» на <span class="place dark-grey">254</span> месте в рейтинге </div>
+              </div>
+
+                <div class=" call-to-continue dark-grey base-font" >Хотите получать информацию о новых продуктах, специальных предложениях и скидках?</div>
+                
+                <form class="email_input_form" id="email" action="">
+
+                <div  class="input_field_container" id="input_email_container"><input class="input_field input-font grey" id="input_email" type="text"  placeholder="Отправить код на Email" form="email" _pattern="^[A-Za-zа-яА-Я0-9#$%&'*+—/=?^_`{|}~]+(\.?[A-Za-zа-яА-Я0-9#$%&' *+—/=?^_`{|}~]+)?@[A-Za-zа-яА-Я0-9]([-A-Za-zа-яА-Я0-9]?[a-z0-9])*\.[A-Za-zа-яА-Я0-9]+$" ><span class="input_field_warning" id="email_warning">Используйте только допустимые в email символы<span></div>
+
+
+
+                <input class="button button-font" id="submit_email" type="submit" value="Отправить" form="email">
+              </form>
+             
+
+              
+              </div>
+
+            </div> <!-- step-4-end -->
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="footer">ПОДВАЛ</div>
+    </div>
+
+
+  </body>
+  </html>
